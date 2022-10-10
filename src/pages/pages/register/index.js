@@ -154,22 +154,21 @@ const RegisterPage = () => {
                 fontSize: '1.5rem !important'
               }}
             >
-              {themeConfig.templateName}
             </Typography>
           </Box>
           <Box sx={{ mb: 6 }}>
             <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1.5 }}>
-              Adventure starts here 🚀
+              나만의 앱을 만들 준비가 되셨나요? 🚀
             </Typography>
-            <Typography variant='body2'>Make your app management easy and fun!</Typography>
+            <Typography variant='body2'>빠른 회원가입으로 퀄리티 높은 하이브리드 웹앱을 만들어보세요!</Typography>
           </Box>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
-            <TextField autoFocus fullWidth id='username' label='Username' sx={{ marginBottom: 4 }} />
-            <TextField fullWidth type='email' label='Email' sx={{ marginBottom: 4 }} />
+            <TextField autoFocus fullWidth id='username' label='이름' sx={{ marginBottom: 4 }} />
+            <TextField fullWidth type='email' label='이메일' sx={{ marginBottom: 4 }} />
             <FormControl fullWidth>
-              <InputLabel htmlFor='auth-register-password'>Password</InputLabel>
+              <InputLabel htmlFor='auth-register-password'>비밀번호</InputLabel>
               <OutlinedInput
-                label='Password'
+                label='비밀번호'
                 value={values.password}
                 id='auth-register-password'
                 onChange={handleChange('password')}
@@ -192,27 +191,27 @@ const RegisterPage = () => {
               control={<Checkbox />}
               label={
                 <Fragment>
-                  <span>I agree to </span>
                   <Link href='/' passHref>
-                    <LinkStyled onClick={e => e.preventDefault()}>privacy policy & terms</LinkStyled>
+                    <LinkStyled onClick={e => e.preventDefault()}>개인정보 수집 및 이용약관</LinkStyled>
                   </Link>
+                  <span>에 동의합니다.</span>
                 </Fragment>
               }
             />
             <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
-              Sign up
+              회원가입
             </Button>
             <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
               <Typography variant='body2' sx={{ marginRight: 2 }}>
-                Already have an account?
+                이미 계정이 있으신가요?
               </Typography>
               <Typography variant='body2'>
                 <Link passHref href='/pages/login'>
-                  <LinkStyled>Sign in instead</LinkStyled>
+                  <LinkStyled>로그인 하러가기</LinkStyled>
                 </Link>
               </Typography>
             </Box>
-            <Divider sx={{ my: 5 }}>or</Divider>
+            {/* <Divider sx={{ my: 5 }}>or</Divider>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Link href='/' passHref>
                 <IconButton component='a' onClick={e => e.preventDefault()}>
@@ -236,7 +235,7 @@ const RegisterPage = () => {
                   <Google sx={{ color: '#db4437' }} />
                 </IconButton>
               </Link>
-            </Box>
+            </Box> */}
           </form>
         </CardContent>
       </Card>

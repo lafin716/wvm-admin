@@ -26,7 +26,7 @@ const navigation = () => {
     {
       title: '앱 관리',
       icon: SemanticWeb,
-      path: '/pages/login'
+      path: '/apps'
     },
     {
       title: '배포 관리',

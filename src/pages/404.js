@@ -50,14 +50,14 @@ const Error404 = () => {
         <BoxWrapper>
           <Typography variant='h1'>404</Typography>
           <Typography variant='h5' sx={{ mb: 1, fontSize: '1.5rem !important' }}>
-            Page Not Found ⚠️
+            페이지를 찾을 수 없습니다 ⚠️
           </Typography>
-          <Typography variant='body2'>We couldn&prime;t find the page you are looking for.</Typography>
+          <Typography variant='body2'>이런! 원하시는 페이지 정보를 찾을 수 없어요.</Typography>
         </BoxWrapper>
         <Img height='487' alt='error-illustration' src='/images/pages/404.png' />
         <Link passHref href='/'>
           <Button component='a' variant='contained' sx={{ px: 5.5 }}>
-            Back to Home
+            홈으로 이동
           </Button>
         </Link>
       </Box>

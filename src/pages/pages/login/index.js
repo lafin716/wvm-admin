@@ -154,21 +154,20 @@ const LoginPage = () => {
                 fontSize: '1.5rem !important'
               }}
             >
-              {themeConfig.templateName}
             </Typography>
           </Box>
           <Box sx={{ mb: 6 }}>
             <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1.5 }}>
-              Welcome to {themeConfig.templateName}! 👋🏻
+              안녕하세요 👋🏻
             </Typography>
-            <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
+            <Typography variant='body2'>지금 로그인하여 나만의 하이브리드 앱을 만들어 보세요!</Typography>
           </Box>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
-            <TextField autoFocus fullWidth id='email' label='Email' sx={{ marginBottom: 4 }} />
+            <TextField autoFocus fullWidth id='email' label='이메일' sx={{ marginBottom: 4 }} />
             <FormControl fullWidth>
-              <InputLabel htmlFor='auth-login-password'>Password</InputLabel>
+              <InputLabel htmlFor='auth-login-password'>비밀번호</InputLabel>
               <OutlinedInput
-                label='Password'
+                label='비밀번호'
                 value={values.password}
                 id='auth-login-password'
                 onChange={handleChange('password')}
@@ -190,9 +189,9 @@ const LoginPage = () => {
             <Box
               sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
             >
-              <FormControlLabel control={<Checkbox />} label='Remember Me' />
+              <FormControlLabel control={<Checkbox />} label='자동로그인' />
               <Link passHref href='/'>
-                <LinkStyled onClick={e => e.preventDefault()}>Forgot Password?</LinkStyled>
+                <LinkStyled onClick={e => e.preventDefault()}>비밀번호를 잊어버리셨나요?</LinkStyled>
               </Link>
             </Box>
             <Button
@@ -202,19 +201,19 @@ const LoginPage = () => {
               sx={{ marginBottom: 7 }}
               onClick={() => router.push('/')}
             >
-              Login
+              로그인
             </Button>
             <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
               <Typography variant='body2' sx={{ marginRight: 2 }}>
-                New on our platform?
+                아직 회원이 아니시라면
               </Typography>
               <Typography variant='body2'>
                 <Link passHref href='/pages/register'>
-                  <LinkStyled>Create an account</LinkStyled>
+                  <LinkStyled>회원가입 하러가기</LinkStyled>
                 </Link>
               </Typography>
             </Box>
-            <Divider sx={{ my: 5 }}>or</Divider>
+            {/* <Divider sx={{ my: 5 }}>or</Divider>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Link href='/' passHref>
                 <IconButton component='a' onClick={e => e.preventDefault()}>
@@ -238,7 +237,7 @@ const LoginPage = () => {
                   <Google sx={{ color: '#db4437' }} />
                 </IconButton>
               </Link>
-            </Box>
+            </Box> */}
           </form>
         </CardContent>
       </Card>
