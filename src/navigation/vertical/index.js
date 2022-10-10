@@ -10,6 +10,7 @@ import AccountPlusOutline from 'mdi-material-ui/AccountPlusOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 import { BellBadgeOutline, CloudUploadOutline, SemanticWeb, SquareRoundedOutline } from 'mdi-material-ui'
+import AppRegist from 'src/pages/apps/regist'
 
 const navigation = () => {
   return [

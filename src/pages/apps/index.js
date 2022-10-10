@@ -7,16 +7,20 @@ import CardHeader from '@mui/material/CardHeader'
 
 // ** Demo Components Imports
 import TableApps from 'src/views/tables/TableApps'
-import { IconButton } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
+import { Car, Plus } from 'mdi-material-ui'
 
 const Apps = () => {
     return (
     <Grid container spacing={6}>
         <Grid item xs={12}>
+            <Grid style={{display: 'flex', flexDirection: 'column', alignItems: 'end'}}>
+                <Link href='/apps/regist'>
+                    <Button>신규 앱 추가</Button>
+                </Link>
+            </Grid>
             <Card>
-            <CardHeader title='앱 목록' titleTypographyProps={{ variant: 'h6' }} >
-                <IconButton />
-            </CardHeader>
+            <CardHeader title='앱 목록' titleTypographyProps={{ variant: 'h6' }} />
             <TableApps />
             </Card>
         </Grid>
