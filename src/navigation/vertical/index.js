@@ -45,19 +45,19 @@ const navigation = () => {
     {
       title: 'Login',
       icon: Login,
-      path: '/pages/login',
+      path: '/account/login',
       openInNewTab: true
     },
     {
       title: 'Register',
       icon: AccountPlusOutline,
-      path: '/pages/register',
+      path: '/account/register',
       openInNewTab: true
     },
     {
       title: 'Error',
       icon: AlertCircleOutline,
-      path: '/pages/error',
+      path: '/error',
       openInNewTab: true
     },
     {

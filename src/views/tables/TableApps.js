@@ -10,35 +10,58 @@ import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TablePagination from '@mui/material/TablePagination'
-import { Android, Apple, AppleIos, Loading } from 'mdi-material-ui'
+import { Android, Apple, AppleIos, Cog, CogOffOutline, CogOutline, FolderRefresh, Loading, Recycle, Refresh, RefreshAuto, TrashCan, TrashCanOutline, WebRefresh } from 'mdi-material-ui'
 import styles from 'styles/animate.module.css'
+import { IconButton } from '@mui/material'
 
 const columns = [
   { id: 'name', label: '이름', minWidth: 200 },
-  { id: 'platform', label: '플랫폼', minWidth: 70 },
+  { id: 'platform', label: '플랫폼', minWidth: 30 },
   {
     id: 'service_state',
     label: '서비스 상태',
-    minWidth: 120
+    minWidth: 50
   },
   {
     id: 'build_state',
     label: '빌드 상태',
-    minWidth: 170
+    minWidth: 50
   },
   {
     id: 'deploy_state',
     label: '배포 상태',
-    minWidth: 170
+    minWidth: 50,
   },
   {
     id: 'created_at',
     label: '생성날짜',
-    minWidth: 200
+    minWidth: 120,
+    align: 'center',
+  },
+  {
+    id: 'buttons',
+    label: '관리',
+    minWidth: 70,
+    align: 'center'
   }
 ]
-function createData(name, platform, service_state, build_state, deploy_state, created_at) {
-  return { name, platform, service_state, build_state, deploy_state, created_at }
+
+function getManageButtons() {
+  return (
+    <div>
+      <IconButton>
+        <CogOutline />
+      </IconButton>
+      <IconButton>
+        <TrashCanOutline />
+      </IconButton>
+    </div>
+  )
+}
+
+function createData(code, name, platform, service_state, build_state, deploy_state, created_at) {
+  var buttons = getManageButtons();
+  return { code, name, platform, service_state, build_state, deploy_state, created_at, buttons}
 }
 
 const labelService = {
@@ -70,8 +93,8 @@ const platformIcons = {
 }
 
 const rows = [
-  createData('나의 앱', platformIcons['ANDROID'], labelService['RUNNING'], labelBuild['COMPLETE'], labelDeploy['PENDING'], '2022-11-11 12:00:00'),
-  createData('나의 앱', platformIcons['IOS'], labelService['STOP'], labelBuild['PENDING'], labelDeploy['NOT_DEPLOYED'], '2022-11-11 12:00:00')
+  createData(1, '우기몰', platformIcons['ANDROID'], labelService['RUNNING'], labelBuild['COMPLETE'], labelDeploy['PENDING'], '2022-11-11 12:00:00'),
+  createData(2, '윅몰2', platformIcons['IOS'], labelService['STOP'], labelBuild['PENDING'], labelDeploy['NOT_DEPLOYED'], '2022-11-11 12:00:00')
 ]
 
 const TableApps = () => {
